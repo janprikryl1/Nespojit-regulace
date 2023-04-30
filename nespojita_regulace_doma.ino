@@ -5,7 +5,7 @@
 #define OUTPUT_1 10 //1. výstup D10
 #define OUTPUT_2 11 //2. výstup D11
 #define OUTPUT_3 12 //3. výstup D12
-#define loopDelay 1000
+#define loopDelay 5000
 
 ModbusMaster node; //object node for class ModbusMaster
 SoftwareSerial Serial1(2, 3); // RX, TX
@@ -195,17 +195,17 @@ const SerialMenuEntry mainMenu[] = {
 
 void control() {
    if(!manual_control && (battery_current >= 0)) {
-            if (battery_soc >= 95 && (PvPower1 > 2500)) {
+            if (battery_soc >= 95 && (PvPower1 > 2000)) {
                 digitalWrite(OUTPUT_1, HIGH);
                 digitalWrite(OUTPUT_2, HIGH);
                 digitalWrite(OUTPUT_3, HIGH);
                 status = 3;
-            } else if (battery_soc >= 90 && (PvPower1 > 1600)) {
+            } else if (battery_soc >= 85 && (PvPower1 > 1500)) {
                 digitalWrite(OUTPUT_1, HIGH);
                 digitalWrite(OUTPUT_2, HIGH);
                 digitalWrite(OUTPUT_3, LOW);
                 status = 2;
-            } else if (battery_soc >= 80 && (PvPower1 > 900)) {
+            } else if (battery_soc >= 75 && (PvPower1 > 700)) {
                 digitalWrite(OUTPUT_1, HIGH);
                 digitalWrite(OUTPUT_2, LOW);
                 digitalWrite(OUTPUT_3, LOW);
