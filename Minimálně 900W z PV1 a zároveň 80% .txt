@@ -1,0 +1,5 @@
+Z baterky musí jít 0A
+
+Minimálně 900W z PV1 a zároveň 80% baterka - zapne se 1
+1600W a 90% baterky - zaponou se 2
+2500W a 95% baterky - zapnou se 3
