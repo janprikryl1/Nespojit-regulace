@@ -5,7 +5,7 @@
 #define OUTPUT_1 10 //1. výstup D10
 #define OUTPUT_2 11 //2. výstup D11
 #define OUTPUT_3 12 //3. výstup D12
-#define loopDelay 5000
+#define loopDelay 1000
 
 ModbusMaster node; //object node for class ModbusMaster
 SoftwareSerial Serial1(2, 3); // RX, TX
@@ -105,12 +105,12 @@ void show_status() {
   Serial.println(status);
 }
 void show_battery_current() {
-  Serial.print(F("Solar power: "));
-  Serial.println(PvPower1);
-}
-void show_solar_power() {
   Serial.print(F("Battery current: "));
   Serial.println(battery_current);
+}
+void show_solar_power() {
+  Serial.print(F("Solar power: "));
+  Serial.println(PvPower1);
 }
 void turn_on_heater() {
   digitalWrite(OUTPUT_1, HIGH);
@@ -274,5 +274,9 @@ void loop() {
 
     control();
    
+    delay(loopDelay);
+    delay(loopDelay);
+    delay(loopDelay);
+    delay(loopDelay);
     delay(loopDelay);
 }
